@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" class="has-navbar-fixed-top"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./code_files/app.css">
+    <link rel="shortcut icon" type="image/png" href="ref">
+    <script defer="" src="./code_files/cdn.min.js.download"></script>
+    <link rel="stylesheet" href="./code_files/all.min.css">
+    
+        <link rel="stylesheet" href="./code_files/bulma-social.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Code and Benchmarks | MIT-BIH Arrhythmia</title>
+<meta name="generator" content="Jekyll v3.9.2">
+<meta property="og:title" content="Code and Benchmarks">
+<meta property="og:locale" content="en">
+<meta name="description" content="Paddy Inspector: Dataset and Techniques for automated identification of diseases and pests in paddy">
+<meta property="og:description" content="Paddy Inspector: Dataset and Techniques for automated identification of diseases and pests in paddy">
+<!-- <link rel="canonical" href="https://paddydoc.github.io/code/"> -->
+<!-- <meta property="og:url" content="https://paddydoc.github.io/code/"> -->
+<meta property="og:site_name" content="Paddy Doctor">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Code and Benchmarks">
+<script type="application/ld+json">
+
+{"@context":"https://schema.org","@type":"WebPage","description":"Paddy Inspector: Dataset and Techniques for automated identification of diseases and pests in paddy","headline":"Code and Benchmarks","url":"https://paddydoc.github.io/code/"}</script> 
+<!-- End Jekyll SEO tag -->
+
+    <!-- head scripts --></head>
+
+  <body>
+    <nav class="navbar is-primary  is-fixed-top " x-data="{ openNav: false }">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="code.html" class="navbar-item">
+               MIT-BIH Arrhythmia
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ &#39;is-active&#39;: openNav }" x-on:click="openNav = !openNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ &#39;is-active&#39;: openNav }">
+            <div class="navbar-start">
+                <a href="home.html" class="navbar-item ">Home</a>
+                
+                
+                    
+                    <a href="dataset.html" class="navbar-item ">Dataset</a>
+                    
+                
+                    
+                    <a href="code.html" class="navbar-item is-active">Code</a>
+                    
+                
+                    
+                    <a href="index.html" class="navbar-item ">Team</a>
+                    
+                
+                
+            </div>
+
+            <div class="navbar-end">
+                
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+    
+    
+
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                
+                <div class="column is-12">
+                    
+                    
+                    
+                    
+                    
+    
+    
+
+<div class="contents">
+    <div class="menu">
+        <p class="menu-label">Contents</p>
+        <ul class="menu-list">
+  <li><a href="#benchmarking-results">Benchmarking Results</a></li>
+  <li><a href="#cnnlstm-results">Cnn-Lstm Results</a></li>
+  <li><a href="#cnn-results">Cnn Results</a></li>
+  <li><a href="#simplernn-results">Simple Rnn Results</a></li>
+  <li><a href="#deepnn-results">Deep Neural Network Results</a></li>
+  <li><a href="#lstm-results">LSTM Results</a></li>
+  <li><a href="#attention-results">Attention Results</a></li>
+  <li><a href="#residual-results">Residual Results</a></li>
+  <li><a href="#seq-results">Seq_Seq_DL Results</a></li>
+  <li><a href="#imle-results">IMLE-Net Results</a></li>
+  <li><a href="#cardio-results">Cardiologist-level arrhythmia Results</a></li>
+  <li><a href="#automatic-results">Automatic ECG Results</a></li>
+  <li><a href="#attentionmap-results">Attention Map Results</a></li>
+
+
+
+</ul>
+    </div>
+</div>
+
+
+
+
+<div class="content">
+    <h2 id="benchmarking-results">Benchmarking results</h2>
+
+<h4 id="comparison-of-model-performance-on-the-disease-dataset-16225-samples">Comparison of model performance on the disease dataset (10,407 samples)</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Model</th>
+      <th style="text-align: right">Precision weighted avg (%)</th>
+      <th style="text-align: right">Recall weighted avg (%)</th>
+      <th style="text-align: right">F1-score weighted avg (%)</th>
+      <th style="text-align: right">Accuracy(%)</th>
+      <th style="text-align: right">AUC(%)</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><a href="https://www.kaggle.com/code/deepologylab/cnn-lstm-multiiclass-tf-deepology">Cnn-Lstm</a></td>
+      <td style="text-align: right">96</td>
+      <td style="text-align: right">94</td>
+      <td style="text-align: right">95</td>
+      <td style="text-align: right">93.92</td>
+      <td style="text-align: right">96</td>
+
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.kaggle.com/code/deepologylab/cnn-multiclass-tf-deepology">Cnn</a></td>
+      <td style="text-align: right">97</td>
+      <td style="text-align: right">97</td>
+      <td style="text-align: right">97</td>
+      <td style="text-align: right">96.68</td>
+      <td style="text-align: right">98</td>
+
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.kaggle.com/code/deepologylab/simplernn-multiiclass-tf-deepology">Simple Rnn</a></td>
+      <td style="text-align: right">96</td>
+      <td style="text-align: right">95</td>
+      <td style="text-align: right">96</td>
+      <td style="text-align: right">95.35</td>
+      <td style="text-align: right">97</td>
+
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.kaggle.com/code/deepologylab/deep-multiiclass-tf-deepology">Deep Neural Network</a></td>
+      <td style="text-align: right">96</td>
+      <td style="text-align: right">93</td>
+      <td style="text-align: right">94</td>
+      <td style="text-align: right">93.39</td>
+      <td style="text-align: right">96</td>
+
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.kaggle.com/code/deepologylab/lstm-multilabel-tf-deepology">LSTM</a></td>
+      <td style="text-align: right">97</td>
+      <td style="text-align: right">97</td>
+      <td style="text-align: right">97</td>
+      <td style="text-align: right">96.87</td>
+      <td style="text-align: right">98</td>
+
+    </tr>
+     <tr>
+      <td style="text-align: left"><a href="https://www.kaggle.com/code/deepologylab/attention-multiiclass-tf-deepology">Attention</a></td>
+      <td style="text-align: right">98</td>
+      <td style="text-align: right">97</td>
+      <td style="text-align: right">97</td>
+      <td style="text-align: right">97.37</td>
+      <td style="text-align: right">98</td>
+    </tr>
+     <tr>
+      <td style="text-align: left"><a href="https://www.kaggle.com/code/deepologylab/residual-multilabel-tf-deepology">Residual</a></td>
+      <td style="text-align: right">97</td>
+      <td style="text-align: right">95</td>
+      <td style="text-align: right">96</td>
+      <td style="text-align: right">95.27</td>
+      <td style="text-align: right">97</td>
+
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.kaggle.com/code/ahmdtolba/seq-seq-dl">Seq_Seq_DL</a></td>
+      <td style="text-align: right">98</td>
+      <td style="text-align: right">98</td>
+      <td style="text-align: right">98</td>
+      <td style="text-align: right">98.04</td>
+      <td style="text-align: right">98</td>
+
+
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.kaggle.com/code/ahmdtolba/imle-net">IMLE-Net</a></td>
+      <td style="text-align: right">98</td>
+      <td style="text-align: right">98</td>
+      <td style="text-align: right">98</td>
+      <td style="text-align: right">97.79</td>
+      <td style="text-align: right">97</td>
+
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.kaggle.com/code/ahmdtolba/cardiologist-level">Cardiologist-level arrhythmia</a></td>
+      <td style="text-align: right">98</td>
+      <td style="text-align: right">98</td>
+      <td style="text-align: right">98</td>
+      <td style="text-align: right">98.42</td>
+      <td style="text-align: right">99</td>
+
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.kaggle.com/code/ahmdtolba/automatic-ecg">Automatic ECG</a></td>
+      <td style="text-align: right">99</td>
+      <td style="text-align: right">99</td>
+      <td style="text-align: right">99</td>
+      <td style="text-align: right">98.8</td>
+      <td style="text-align: right">99</td>
+
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://www.kaggle.com/code/ahmdtolba/attention-map">Attention Map</a></td>
+      <td style="text-align: right">98</td>
+      <td style="text-align: right">98</td>
+      <td style="text-align: right">98</td>
+      <td style="text-align: right">97.9</td>
+      <td style="text-align: right">99</td>
+
+    </tr>
+
+
+
+  </tbody>
+</table>
+
+<h2 id="cnnlstm-results">Cnn-Lstm Results</h2>
+<h4 id="classification-report">Classification Report</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                          
+
+                                  precision    recall  f1-score   support
+
+Normal Beat                           0.99      0.94      0.96     18118
+Supraventricular premature beat       0.49      0.83      0.62       556
+Premature ventricular contraction     0.79      0.96      0.86      1448
+Fusion of ventricular                 0.36      0.86      0.51       162
+Unclassifiable beat                   0.93      0.98      0.96      1608
+
+  accuracy                                                0.94     21892
+ macro avg                           0.71      0.92      0.78      21892
+weighted avg                         0.96      0.94      0.95      21892
+
+</code></pre></div></div>
+<h4 id="confusion-matrix">Confusion matrix</h4>
+<p><img src="./code_files/cnn_lstm_cm.png" alt="cnn_lstm cm"></p>
+<h4 id="auc">Roc Curve</h4>
+<p><img src="./code_files/cnn_lstm_auc.png" alt="cnn_lstm auc"></p>
+
+<h2 id="cnn-results">Cnn Results</h2>
+<h4 id="classification-report-1">Classification Report</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                          
+
+                                    precision    recall  f1-score   support
+
+  Normal Beat                           0.99      0.97      0.98     18118
+  Supraventricular premature beat       0.59      0.84      0.70       556
+  Premature ventricular contraction     0.91      0.97      0.94      1448
+  Fusion of ventricular                 0.55      0.86      0.67       162
+  Unclassifiable beat                   0.98      0.99      0.98      1608
+
+     accuracy                                               0.97     21892
+    macro avg                           0.80      0.93      0.85     21892
+ weighted avg                           0.97      0.97      0.97     21892
+
+
+</code></pre></div></div>
+<h4 id="confusion-matrix-1">Confusion matrix</h4>
+<p><img src="./code_files/cnn_cm.png" alt="cnn cm"></p>
+<h4 id="auc-1">Roc Curve</h4>
+<p><img src="./code_files/cnn_auc.png" alt="cnn auc"></p>
+
+<h2 id="simplernn-results">Simple Rnn Results</h2>
+<h4 id="classification-report-2">Classification Report</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                          
+
+                                    precision    recall  f1-score   support
+
+Normal Beat                             0.99      0.96      0.97     18118
+Supraventricular premature beat         0.61      0.81      0.69       556
+Premature ventricular contraction       0.83      0.96      0.89      1448
+Fusion of ventricular                   0.36      0.84      0.50       162
+Unclassifiable beat                     0.97      0.97      0.97      1608
+
+     accuracy                                               0.95     21892
+    macro avg                           0.75      0.91      0.81     21892
+ weighted avg                           0.96      0.95      0.96     21892
+
+
+</code></pre></div></div>
+<h4 id="confusion-matrix-2">Confusion matrix</h4>
+<p><img src="./code_files/simple_rnn_cm.png" alt="simple_rnn cm"></p>
+<h4 id="auc-2">Roc Curve</h4>
+<p><img src="./code_files/simple_rnn_auc.png" alt="simple_rnn auc"></p>
+
+<h2 id="deepnn-results">Deep Neural Network Results</h2>
+<h4 id="classification-report-3">Classification Report</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                        
+
+                                     precision    recall  f1-score   support
+
+Normal Beat                             0.99      0.93      0.96     18118
+Supraventricular premature beat         0.36      0.84      0.50       556
+Premature ventricular contraction       0.87      0.95      0.91      1448
+Fusion of ventricular                   0.40      0.86      0.54       162
+Unclassifiable beat                     0.96      0.98      0.97      1608
+
+     accuracy                                               0.93     21892
+    macro avg                           0.72      0.91      0.78     21892
+ weighted avg                           0.96      0.93      0.94     21892
+
+</code></pre></div></div>
+<h4 id="confusion-matrix-3">Confusion matrix</h4>
+<p><img src="./code_files/dnn_cm.png" alt="dnn cm"></p>
+<h4 id="auc-3">Confusion matrix</h4>
+<p><img src="./code_files/dnn_auc.png" alt="dnn auc"></p>
+
+<h2 id="lstm-results">LSTM Results</h2>
+<h4 id="classification-report-4">Classification Report</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                           
+
+                                    precision    recall  f1-score   support
+
+Normal Beat                             0.99      0.97      0.98     18118
+Supraventricular premature beat         0.63      0.84      0.72       556
+Premature ventricular contraction       0.91      0.95      0.93      1448
+Fusion of ventricular                   0.59      0.88      0.70       162
+Unclassifiable beat                     0.97      0.99      0.98      1608
+
+     accuracy                                               0.97     21892
+    macro avg                           0.82      0.93      0.86     21892
+ weighted avg                           0.97      0.97      0.97     21892
+
+</code></pre></div></div>
+<h4 id="confusion-matrix-4">Confusion matrix</h4>
+<p><img src="./code_files/lstm_cm.png" alt="lstm cm"></p>
+<h4 id="auc-4">Roc Curve</h4>
+<p><img src="./code_files/lstm_auc.png" alt="lstm auc"></p>
+
+<h2 id="attention-results">Attention Results</h2>
+<h4 id="classification-report-5">Classification Report</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                           
+                                     precision    recall  f1-score   support
+
+Normal Beat                             0.99      0.98      0.99     18118
+Supraventricular premature beat         0.69      0.82      0.75       556
+Premature ventricular contraction       0.91      0.95      0.93      1448
+Fusion of ventricular                   0.74      0.81      0.78       162
+Unclassifiable beat                     0.98      0.99      0.98      1608
+
+     accuracy                                               0.97     21892
+    macro avg                           0.86      0.91      0.88     21892
+ weighted avg                           0.98      0.97      0.97     21892
+
+
+</code></pre></div></div>
+<h4 id="confusion-matrix-5">Confusion matrix</h4>
+<p><img src="./code_files/attention_cm.png" alt="attention cm"></p>
+<h4 id="auc-5">Roc Curve</h4>
+<p><img src="./code_files/attention_auc.png" alt="attention auc"></p>
+
+
+<h2 id="residual-results">Residual Results</h2>
+<h4 id="classification-report-6">Classification Report</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                           
+
+                                    precision    recall  f1-score   support
+
+Normal Beat                             1.00      0.95      0.97     18118
+Supraventricular premature beat         0.53      0.88      0.66       556
+Premature ventricular contraction       0.84      0.97      0.90      1448
+Fusion of ventricular                   0.42      0.86      0.57       162
+Unclassifiable beat                     0.95      0.99      0.97      1608
+
+     accuracy                                               0.95     21892
+    macro avg                           0.75      0.93      0.82     21892
+ weighted avg                           0.97      0.95      0.96     21892
+
+
+</code></pre></div></div>
+<h4 id="confusion-matrix-6">Confusion matrix</h4>
+<p><img src="./code_files/residual_cm.png" alt="residual cm"></p>
+<h4 id="auc-6">Roc Curve</h4>
+<p><img src="./code_files/residual_auc.png" alt="residual auc"></p>
+
+<!-- -->
+<h2 id="seq-results">Seq_Seq_DL Results</h2>
+<h4 id="classification-report-7">Classification Report</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                           
+
+                                    precision    recall  f1-score   support
+
+Normal Beat                             0.99      0.99      0.99     18118
+Supraventricular premature beat         0.82      0.79      0.80       556
+Premature ventricular contraction       0.94      0.95      0.95      1448
+Fusion of ventricular                   0.81      0.73      0.77       162
+Unclassifiable beat                     0.99      0.97      0.98      1608
+
+     accuracy                                               0.98     21892
+    macro avg                           0.91      0.89      0.90     21892
+ weighted avg                           0.98      0.98      0.98     21892
+
+
+</code></pre></div></div>
+<h4 id="confusion-matrix-7">Confusion matrix</h4>
+<p><img src="./code_files/seq_cm.PNG" alt="seq cm"></p>
+<h4 id="auc-7">Roc Curve</h4>
+<p><img src="./code_files/seq_auc.PNG" alt="seq auc"></p>
+
+<h2 id="imle-results">IMLE-Net Results</h2>
+<h4 id="classification-report-8">Classification Report</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                           
+
+                                    precision    recall  f1-score   support
+
+Normal Beat                             0.98      1.00      0.99     18118
+Supraventricular premature beat         0.94      0.66      0.77       556
+Premature ventricular contraction       0.99      0.89      0.94      1448
+Fusion of ventricular                   0.86      0.72      0.79       162
+Unclassifiable beat                     1.00      0.96      0.98      1608
+
+     accuracy                                               0.98     21892
+    macro avg                           0.95      0.84      0.89     21892
+ weighted avg                           0.98      0.98      0.98     21892
+
+
+</code></pre></div></div>
+<h4 id="confusion-matrix-8">Confusion matrix</h4>
+<p><img src="./code_files/imle_cm.PNG" alt="imle-net cm"></p>
+<h4 id="auc-8">Roc Curve</h4>
+<p><img src="./code_files/imle_auc.PNG" alt="imle-net auc"></p>
+
+<h2 id="cardio-results">Cardiologist-level arrhythmia Results</h2>
+<h4 id="classification-report-9">Classification Report</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                           
+
+                                    precision    recall  f1-score   support
+
+Normal Beat                             0.99      0.99      0.99     18118
+Supraventricular premature beat         0.86      0.80      0.83       556
+Premature ventricular contraction       0.96      0.96      0.96      1448
+Fusion of ventricular                   0.87      0.68      0.76       162
+Unclassifiable beat                     0.99      0.99      0.99      1608
+
+     accuracy                                               0.98     21892
+    macro avg                           0.93      0.88      0.91     21892
+ weighted avg                           0.98      0.98      0.98     21892
+
+</code></pre></div></div>
+<h4 id="confusion-matrix-9">Confusion matrix</h4>
+<p><img src="./code_files/cardio_cm.PNG" alt="cardio cm"></p>
+<h4 id="auc-9">Roc Curve</h4>
+<p><img src="./code_files/cardio_auc.PNG" alt="cardio auc"></p>
+
+<h2 id="automatic-results">Automatic ECG Results</h2>
+<h4 id="classification-report-10">Classification Report</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                           
+
+                                    precision    recall  f1-score   support
+
+Normal Beat                             0.99      1.00      0.99     18118
+Supraventricular premature beat         0.95      0.80      0.87       556
+Premature ventricular contraction       0.96      0.97      0.97      1448
+Fusion of ventricular                   0.84      0.84      0.84       162
+Unclassifiable beat                     1.00      0.99      0.99      1608
+
+     accuracy                                               0.99     21892
+    macro avg                           0.95      0.92      0.93     21892
+ weighted avg                           0.99      0.99      0.99     21892
+
+
+</code></pre></div></div>
+<h4 id="confusion-matrix-10">Confusion matrix</h4>
+<p><img src="./code_files/automatic_cm.PNG" alt="automatic cm"></p>
+<h4 id="auc-10">Roc Curve</h4>
+<p><img src="./code_files/automatic_auc.PNG" alt="automatic auc"></p>
+
+<h2 id="attentionmap-results">Attention Map Results</h2>
+<h4 id="classification-report-11">Classification Report</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                           
+
+                                    precision    recall  f1-score   support
+
+Normal Beat                             0.98      1.00      0.99     18118
+Supraventricular premature beat         0.99      0.60      0.74       556
+Premature ventricular contraction       0.96      0.94      0.95      1448
+Fusion of ventricular                   0.93      0.50      0.65       162
+Unclassifiable beat                     0.99      0.98      0.99      1608
+
+     accuracy                                               0.98     21892
+    macro avg                           0.97      0.80      0.86     21892
+ weighted avg                           0.98      0.98      0.98     21892
+
+
+</code></pre></div></div>
+<h4 id="confusion-matrix-11">Confusion matrix</h4>
+<p><img src="./code_files/attention_map_cm.PNG" alt="attentionmap cm"></p>
+<h4 id="auc-11">Roc Curve</h4>
+<p><img src="./code_files/attention_map_auc.PNG" alt="attentionmap auc"></p>
+
+
+
+
+</div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+        <footer class="footer">
+    <div class="container">
+        
+        
+
+        <div class="content is-small has-text-centered">
+          <p class="">Theme built by <a href="AAA">Auther Name</a></p>
+        </div>
+    </div>
+</footer>
+
+    
+    <script src="./code_files/app.js.download" type="text/javascript"></script><!-- footer scripts -->
+
+<div id="torrent-scanner-popup" style="display: none;"></div></body></html>
